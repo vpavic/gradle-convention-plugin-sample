@@ -1,0 +1,31 @@
+plugins {
+    id("java")
+    id("com.github.ben-manes.versions")
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+dependencyUpdates {
+    revision = "release"
+    gradleReleaseChannel = "current"
+    rejectVersionIf {
+        def isStable = { String version ->
+            def isStableVersion = (version ==~ /^[0-9,.v-]+(-r)?$/)
+            def isStableKeyword = ["RELEASE", "FINAL", "GA"].any({ version.toUpperCase().contains(it) })
+            return isStableVersion || isStableKeyword
+        }
+        isStable(it.currentVersion) && !isStable(it.candidate.version)
+    }
+}
