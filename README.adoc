@@ -1,5 +1,7 @@
 = Gradle Build Conventions Sample
 
+image:https://github.com/vpavic/gradle-build-conventions-sample/actions/workflows/build.yml/badge.svg["Build", link="https://github.com/vpavic/gradle-build-conventions-sample/actions/workflows/build.yml"]
+
 This repository contains a simple Gradle plugin project that will be used to demonstrate sharing of build conventions across multiple projects.
 
 The plugin is implemented using Gradle's support for https://docs.gradle.org/current/userguide/custom_plugins.html#sec:precompiled_plugins[precompiled script plugins].
