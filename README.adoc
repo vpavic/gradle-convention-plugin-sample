@@ -1,0 +1,11 @@
+= Gradle Build Conventions Sample
+
+This repository contains a simple Gradle plugin project that will be used to demonstrate sharing of build conventions across multiple projects.
+
+The plugin is implemented using Gradle's support for https://docs.gradle.org/current/userguide/custom_plugins.html#sec:precompiled_plugins[precompiled script plugins].
+
+A real-world example of build conventions plugin like this is https://github.com/spring-gradle-plugins/spring-build-conventions[spring-gradle-plugins/spring-build-conventions], that's used to share common build logic between projects in Spring Security group of projects.
+
+== Plugins
+
+* link:src/main/groovy/sample.java-conventions.gradle[`sample.java-conventions`]
